@@ -1,0 +1,10 @@
+
+<div class="container mt-4">
+    <label for="datepicker">Select Date:</label>
+    <div class="input-group">
+        <input class="form-control" placeholder="Select a date" ngbDatepicker #d="ngbDatepicker">
+        <button class="btn btn-outline-secondary" (click)="d.toggle()" type="button">
+            <i class="bi bi-calendar"></i> <!-- Bootstrap Icon -->
+        </button>
+    </div>
+</div>

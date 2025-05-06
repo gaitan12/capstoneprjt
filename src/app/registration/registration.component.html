@@ -1,0 +1,66 @@
+<div class="modal fade" tabindex="-1" id="booking-modal">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title">Register and Book a Tour</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+
+        <div class="container mt-3">
+          <form #myForm="ngForm" (ngSubmit)="onSubmit()" novalidate>
+            <div class="row">
+              <div class="col-6">
+                <div class="form-floating">
+                  <input
+                    id="email"
+                    type="email"
+                    class="form-control"
+                    placeholder="Your Email"
+                    [(ngModel)]="formData.email"
+                    name="email"
+                    required
+                    #email="ngModel"
+                  />
+                  <label for="email" class="form-label">Email Address</label>
+                </div>
+                <div *ngIf="email.invalid && email.touched" class="text-danger small">
+                  Email is required and must be valid.
+                </div>
+              </div>
+
+              <div class="col-6">
+                <div class="form-floating">
+                  <input
+                    id="name"
+                    type="text"
+                    class="form-control"
+                    placeholder="Your Name"
+                    [(ngModel)]="formData.name"
+                    name="name"
+                    required
+                    #name="ngModel"
+                  />
+                  <label for="name" class="form-label">Name</label>
+                </div>
+                <div *ngIf="name.invalid && name.touched" class="text-danger small">
+                  Name is required.
+                </div>
+              </div>
+            </div>
+
+            <div class="modal-footer">
+              <button type="submit" class="btn btn-primary" [disabled]="loading || myForm.invalid">
+                Submit
+              </button>
+            </div>
+          </form>
+        </div>
+
+        <div class="container text-center">
+          <div *ngIf="loading" class="text-primary">Loading...</div>
+          <div *ngIf="errorMessage" class="text-danger">{{ errorMessage }}</div>
+          <div *ngIf="successMessage" class="text-success">{{ successMessage }}</div>
+        </div>
+      </div>
+    </div>
+  </div>

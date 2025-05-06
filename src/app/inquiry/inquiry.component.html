@@ -1,0 +1,85 @@
+
+<div class="dropdown">
+    <button class="btn btn-primary dropdown-toggle" type="button" id="dropdownMenuButton" data-bs-toggle="dropdown" aria-expanded="false">
+        Start Planning Tours
+    </button>
+
+    <div class="dropdown-menu p-4" style="width: 300px;">
+        <form #myForm="ngForm" (ngSubmit)="onSubmit()" >
+            <div class="mb-3">
+                <label for="First_Name" class="form-label">First Name:</label>
+                <input type="text" [(ngModel)]="formData.first_name"class="form-control" id="first-name" name="first-name" placeholder="First Name">
+            </div>
+
+            <div class="mb-3">
+                <label for="last-name" class="form-label">Last Name:</label>
+                <input type="text" [(ngModel)]="formData.last_name" class="form-control" id="last-name" name="last-name" placeholder="Last Name">
+            </div>
+
+            <div class="mb-3">
+                <label for="email" class="form-label">Email:</label>
+                <input type="email" [(ngModel)]="formData.email" class="form-control" id="email" name="email" placeholder="Email">
+            </div>
+
+            <h2>Questions for Your Trip</h2>
+
+            <div class="mb-3">
+                <label for="phone-number" class="form-label">Phone Number:</label>
+                <input type="tel"[(ngModel)]="formData.phone_number" class="form-control" id="phone-number" name="phone-number" placeholder="Phone Number">
+            </div>
+
+            <div class="mb-3">
+                <label for="destination" class="form-label">Where would you like to go?</label>
+                <input type="text"[(ngModel)]="formData.where_would_you_like_to_go" class="form-control" id="destination" name="destination" placeholder="Enter Destination">
+            </div>
+
+            <div class="mb-3">
+                <label for="departure-date" class="form-label">When would you like to depart?</label>
+                <input type="date"[(ngModel)]="formData.when_would_you_like_to_depart" class="form-control" id="departure-date" name="departure-date">
+            </div>
+
+            <div class="mb-3">
+                <label for="return-date" class="form-label">When would you like to return?</label>
+                <input type="date"[(ngModel)]="formData.when_would_you_like_to_return"  class="form-control" id="return-date" name="return-date">
+            </div>
+
+            <h2>Are Your Dates Flexible?</h2>
+            <div class="mb-3">
+                <div class="form-check">
+                    <input class="form-check-input"[(ngModel)]="formData.Are_your_dates_flexible" type="radio" name="flexible-dates" id="flexible-true" value="true">
+                    <label class="form-check-label" for="flexible-true">True</label>
+                </div>
+                <div class="form-check">
+                    <input class="form-check-input"[(ngModel)]="formData.Are_your_dates_flexible" type="radio" name="flexible-dates" id="flexible-false" value="false">
+                    <label class="form-check-label" for="flexible-false">False</label>
+                </div>
+               
+            </div>
+
+            <div class="mb-3">
+                <label for="departure-city" class="form-label">What is your departure city?</label>
+                <input type="text" class="form-control" [(ngModel)]="formData.what_is_your_departure_city" id="departure-city" name="departure-city" placeholder="Enter City">
+            </div>
+
+            <div class="mb-3">
+                <label for="travelers" class="form-label">How many travelers?</label>
+                <input type="number" class="form-control" [(ngModel)]="formData.how_many_travelers" id="travelers" name="travelers" min="1">
+            </div>
+
+            <div class="mb-3">
+                <label for="children-ages" class="form-label">If traveling with children under 18, please list their ages:</label>
+                <input type="text" class="form-control" [(ngModel)]="formData.if_traveling_with_children_under_18_please_list_their_ages" id="children-ages" name="children-ages" placeholder="E.g., 5, 8, 12">
+            </div>
+
+            <div class="mb-3">
+              <label for="message" class="form-label">Message:</label>
+              <input type="text" class="form-control"[(ngModel)]="formData.message" id="message" name="message" placeholder="any additional inquiry">
+          </div>
+
+            <button type="submit" class="btn btn-success w-100">Submit</button>
+        </form>
+    
+      </div>
+    
+  </div>
+  

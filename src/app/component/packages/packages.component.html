@@ -1,0 +1,28 @@
+
+<div class="d-flex p-2 bd-highlight justify-content-around flex-wrap">
+  <div class="card m-2" style="width: 18rem;" *ngFor="let card of cards; let i = index">
+    <img [src]="'assets/' + card.image" class="card-img-top" [alt]="card.category">
+    <div class="card-body">
+      <p class="card-text">Card index: {{ i }}</p>
+      <p>One of the packages is the {{ card.category }} package</p>
+      <p class="card-text">Category: {{ card.category }}</p>
+      <p class="card-text">Price: {{ card.price }}</p>
+      <p class="card-text">Destination: {{ card.destination }}</p>
+      <p class="card-text">Description: {{ card.description }}</p>
+    </div>
+    <div class="d-flex gap-2">
+      <button type="button" class="btn btn-primary" (click)="selectPackage(card)">Select</button>
+      <button type="button" class="btn btn-danger" (click)="dropPackage(card)">Drop</button>
+    </div>
+  </div>
+</div>
+
+
+
+
+
+
+
+
+
+
